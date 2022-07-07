@@ -1,3 +1,5 @@
+(require 'eww)
+
 (defun ewaser--get-class-name (str)
   "Return the css classname from STR"
   (and (s-starts-with-p "." str)
