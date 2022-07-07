@@ -1,0 +1,30 @@
+* ewaser.el
+
+Remove DOM nodes you are not interested in on some websites.
+
+** Overview
+
+When using the amazing emacs web browser, eww, we have the opportunity
+to use `(eww-readable)` that will try to find the main "readable" part
+of the website.  Most of the time, it works perfectly and is
+amazing. But sometimes, even the most readable part contain some
+content you are not really interested in and that adds a lot of noise.
+
+This package allow you to define a list of DOM nodes you want to get rid of.
+
+#+BEGIN_SRC emacs-lisp
+  (setq eww-cleaner-rules-alist '(("\\**stackoverflow" .
+								   ("#left-sidebar"
+									"#sidebar"
+									"#footer"
+									".s-topbar--container"
+									".post-taglist"
+									".answers-subheader"
+									".js-post-menu"
+									".votecell"
+									))))
+
+#+END_SRC
+
+
+
