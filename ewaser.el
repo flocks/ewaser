@@ -1,5 +1,15 @@
 (require 'eww)
 
+(defcustom ewaser-rules-alist nil
+  "List of rules. Each element is a list of the form (KEY. VALUE)
+where KEY is a regex and VALUE is a list of DOM selector
+element.
+
+Ex: (('\\**stackoverflow' . ('#left-sidebar''#sidebar'))))
+"
+  :type '(alist :value-type (list string))
+  :group 'ewaser)
+
 (defun ewaser--get-class-name (str)
   "Return the css classname from STR"
   (and (s-starts-with-p "." str)
